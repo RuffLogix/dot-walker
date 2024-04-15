@@ -1,21 +1,18 @@
 const Websocket = require("ws");
 
 const wss = new Websocket.Server({ port: 8080 });
+const colors = ["red", "blue", "green", "purple", "orange", "brown", "black"];
 
 let playerCount = 0;
 let playerPos = {};
 
 wss.on("connection", (ws) => {
-    console.log("New client connected!");
-
-    console.log(playerPos);
-
     ws.on("message", (message) => {
         const data = JSON.parse(message.toString());
 
         switch (data.type) {
             case "playerConnect":
-                playerPos[playerCount] = { x: Math.floor(Math.random() * 49), y: Math.floor(Math.random() * 49), color: "red" };
+                playerPos[playerCount] = { x: Math.floor(Math.random() * 49), y: Math.floor(Math.random() * 49), color: colors[Math.floor(Math.random() * colors.length)]};
                 ws.send(JSON.stringify({ type: "playerId", playerId: playerCount++, players: playerPos }));
                 break;
             case "playerUpdate":
