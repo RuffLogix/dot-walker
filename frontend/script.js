@@ -2,15 +2,11 @@ const socket = new WebSocket("ws://localhost:8080");
 let playerPos = {};
 let playerId = '';
 
-console.log(playerId);
-
 function renderPlayer() {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    console.log(playerPos);
 
     for (let key in playerPos) {
         if (playerPos[key] !== null) {
@@ -46,7 +42,6 @@ function playerUpdate(event) {
 
 function setup() {
     socket.onopen = () => {
-        console.log("Connected to the server!");
         socket.send(JSON.stringify({ type: "playerConnect" }));
     }  
 
