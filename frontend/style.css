@@ -27,3 +27,17 @@ body {
     border: 1px solid #000; 
     background-color: #fff; 
 }
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}

@@ -72,6 +72,10 @@ function setup() {
     }
 }
 
+function newGame() {
+    location.reload();
+}
+
 addEventListener("load", setup);
 addEventListener("load", renderPlayer);
 addEventListener("keypress", playerUpdate);
