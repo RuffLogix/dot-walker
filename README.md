@@ -6,4 +6,8 @@
 
 The Dot walker game is my practice project for becoming familiar with vanilla WebSocket.
 
-Tech stacks: vanilla javascript & [ws](https://www.npmjs.com/package/ws)
+## Tech Stacks
+
+Frontend: Vanilla HTML/CSS/JS
+
+Backend: Node.js and [ws](https://www.npmjs.com/package/ws)
